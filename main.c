@@ -34,7 +34,7 @@ int main(void)
 			break;
 		}
 
-		dir = _getenv("PATH"); /*retrieve env  PATH*/
+		directory = _getenv("PATH"); /*retrieve env  PATH*/
 		if (!directory)
 			free(cmd), perror("Error"), exit(127);
 
