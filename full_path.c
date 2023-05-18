@@ -19,7 +19,7 @@ char *which_path(char *env_val, char **cmd)
 	}
 
 	token = strtok(cp_path, DELIMETER); 
-	value = malloc(sizeof(char) * (strlen(env_val) + strlen(cmd[0])) + 2);
+	val = malloc(sizeof(char) * (strlen(env_val) + strlen(cmd[0])) + 2);
 
 	while (token) 
 	{

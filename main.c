@@ -47,7 +47,7 @@ int main(void)
 
 		else /*retrive path*/
 		{
-			path = _which(directory, tokenizer); /*search path and retrieve*/
+			path = which_path(directory, tokenizer); /*search path and retrieve*/
 
 		if (path == NULL) /*if path is null/ does not exist*/
 		{

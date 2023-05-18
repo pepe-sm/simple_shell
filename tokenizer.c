@@ -11,7 +11,7 @@ char **_strtok(char *cmd)
 	size_t n = 0;
 	int len = 0;
 
-	len = len_counter(cmd);
+	len = length_count(cmd);
 	tokenized = malloc(sizeof(char *) * (len + 1));
 	if (!tokenized)
 	{
@@ -38,7 +38,7 @@ char **_strtok(char *cmd)
  */
 char *get_env(const char *env)
 {
-	char *_full_path = NULL;
+	char *full_path = NULL;
 	int n = 0;
 
 	while (environ[n]) 
