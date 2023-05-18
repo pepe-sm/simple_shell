@@ -7,7 +7,7 @@
 int main(void)
 {
 	char *cmd = NULL, **tokenizer = {NULL};
-	char *direcroty = NULL, *path = NULL;
+	char *directory = NULL, *path = NULL;
 	size_t n = 0;
 	ssize_t get_input = 0;
 	int which_mode;

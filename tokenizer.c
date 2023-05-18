@@ -20,12 +20,12 @@ char **_strtok(char *cmd)
 		exit(1);
 	}
 
-	tok = strtok(cmd, DELIM);
+	tok = strtok(cmd, DELIMETER);
 
 	for (; tok; n++)
 	{
 		tokenized[n] = tok;
-		tok = strtok(NULL, DELIM);
+		tok = strtok(NULL, DELIMETER);
 	}
 	tokenized[n] = NULL;
 	return (tokenized);

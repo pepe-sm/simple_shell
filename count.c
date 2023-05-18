@@ -12,7 +12,7 @@ int length_count(char *strng)
 	char *token = NULL, *str_cp = NULL;
 
 	str_cp = strdup(strng); 
-	token = strtok(str_cp, DELIMETER)
+	token = strtok(str_cp, DELIMETER);
 
 	for (c = 1; token; c++) 
 	{

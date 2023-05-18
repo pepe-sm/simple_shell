@@ -40,7 +40,7 @@ char *which_path(char *env_val, char **cmd)
 		}
 
 		token = NULL;
-		token = strtok(NULL, DELIMETER
+		token = strtok(NULL, DELIMETER);
 	}
 	free(cp_path);
 	free(val);
