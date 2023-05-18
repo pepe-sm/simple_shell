@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 /**
  * which_path - retrieve the full path of command
  * @env_val: value of path
@@ -18,7 +18,7 @@ char *which_path(char *env_val, char **cmd)
 		exit(1);
 	}
 
-	token = strtok(cp_path, DELIM); 
+	token = strtok(cp_path, DELIMETER); 
 	value = malloc(sizeof(char) * (strlen(env_val) + strlen(cmd[0])) + 2);
 
 	while (token) 
@@ -40,7 +40,7 @@ char *which_path(char *env_val, char **cmd)
 		}
 
 		token = NULL;
-		token = strtok(NULL, DELIM); 
+		token = strtok(NULL, DELIMETER
 	}
 	free(cp_path);
 	free(val);
