@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 
 /**
  * length_count - this returns the value of word count 
@@ -12,11 +12,11 @@ int length_count(char *strng)
 	char *token = NULL, *str_cp = NULL;
 
 	str_cp = strdup(strng); 
-	token = strtok(str_cp, DELIM)
+	token = strtok(str_cp, DELIMETER)
 
 	for (c = 1; token; c++) 
 	{
-		token = strtok(NULL, DELIM); 
+		token = strtok(NULL, DELIMETER); 
 	}
 	free(str_cp);
 	return (c); 
