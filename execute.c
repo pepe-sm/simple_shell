@@ -21,9 +21,9 @@ int _execve(char *pth, char **args)
 	}
 	else if (pid == 0)
 	{
-		if (execve(path, args, environ) == -1)
+		if (execve(pth, args, environ) == -1)
 		{
-			free(path);
+			free(pth);
 			free(args);
 			exit(EXIT_FAILURE);
 		}
