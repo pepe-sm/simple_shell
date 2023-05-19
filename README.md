@@ -43,4 +43,10 @@ ls -la
 
 both will give you a sorted list, that entails even hidden files.
 
-#
+#VIDEO OF PROJECT
+
+
+https://github.com/pepe-sm/simple_shell/assets/52682563/0d6cd18f-9315-4648-89d7-b3e68dad2a06
+
+
+
