@@ -12,15 +12,15 @@ int main(void)
 	ssize_t get_input = 0;
 	int which_mode;
 
-	which_mode = isatty(STDIN_FILENO); /*checks for mode interactive and non-interactive*/
+	which_mode = isatty(STDIN_FILENO);
 	while (1)
 	{
-		if (which_mode == 1) /*print prompt, on condition mode is interactive*/
+		if (which_mode == 1)
 			printf("$ ");
 
-		get_input = getline(&cmd, &n, stdin); /*use getline to allow input*/
+		get_input = getline(&cmd, &n, stdin);
 
-		if (get_input == -1) /*"ctrl + d" exits the loop when quoted cmd is pressed*/
+		if (get_input == -1)
 		{
 			free(cmd);
 			if (which_mode == 1)
@@ -28,34 +28,34 @@ int main(void)
 			exit(0);
 		}
 
-		if (strcmp(cmd, "exit\n") == 0) /*uses string compare to check for "exit" if it matches, loop is broken*/
+		if (strcmp(cmd, "exit\n") == 0)
 		{
 			free(cmd);
 			break;
 		}
 
-		directory = get_env("PATH"); /*retrieve env  PATH*/
+		directory = get_env("PATH");
 		if (!directory)
 			free(cmd), perror("Error"), exit(127);
 
-		tokenizer = _strtok(cmd); /*input tokenization*/
+		tokenizer = _strtok(cmd);
 		if (tokenizer[0] == NULL)
 			continue;
 
-		if (access(tokenizer[0], F_OK) == 0) /*if input is path*/
-			_execve(tokenizer[0], tokenizer); /*execute input*/
+		if (access(tokenizer[0], F_OK) == 0)
+			_execve(tokenizer[0], tokenizer);
 
-		else /*retrive path*/
+		else
 		{
-			path = which_path(directory, tokenizer); /*search path and retrieve*/
+			path = which_path(directory, tokenizer);
 
-		if (path == NULL) /*if path is null/ does not exist*/
+		if (path == NULL)
 		{
 			free(tokenizer), perror("Error");
 			continue;
 		}
 
-		_execve(path, tokenizer); /*execute path*/
+		_execve(path, tokenizer);
 
 		free(path);
 		}
